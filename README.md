@@ -3,7 +3,7 @@
 ### 1. Clone repository
 
 ```
-git clone
+git clone https://github.com/pm13gai/test_ex
 ```
 
 ### 2. Instal dependencies
