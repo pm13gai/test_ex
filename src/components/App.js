@@ -13,8 +13,7 @@ class App extends React.Component {
 
   render() {
     
-    //const {id} = this.props
-    const isLogin = localStorage.getItem('isLogin');
+    const {id} = this.props
     return (
       <div className="app">
         
@@ -22,14 +21,14 @@ class App extends React.Component {
           <Link to='/home'>На главную</Link>
           <Link to='/news'>Новости</Link>
           <Link to='/profile'>Профиль</Link>
-          <Link to='/login'>{!isLogin ? "Войти" : "Выйти"}</Link>
+          <Link to='/login'>{!id ? "Войти" : "Выйти"}</Link>
         </div>
 
 
         <Switch>
           <Route  path='/home' component={Home} />
           <Route  path='/news' component={NewsContainer} />
-          <Route  path='/profile' render={() => isLogin ? <ProfileContainer /> : <Redirect  from='/profile' to='/login' />} />
+          <Route  path='/profile' render={() => id ? <ProfileContainer /> : <Redirect  from='/profile' to='/login' />} />
           <Route  path='/login' component={LoginContainer} />
           <Redirect exact from='/' to='/home' />
           <Route  component={NotFound} />

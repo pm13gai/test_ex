@@ -18,7 +18,6 @@ export function loginReducer(state = initialState, action) {
       return { ...state, isFetching: true, error: '' }
 
     case LOGIN_SUCCESS:
-      localStorage.setItem('isLogin',true);
       return { ...state, isFetching: false, id: action.payload }
       
 
@@ -26,7 +25,6 @@ export function loginReducer(state = initialState, action) {
       return { ...state, isFetching: false, error: action.payload.message }
 
     case LOGOUT:
-      localStorage.removeItem('isLogin');
       return { ...state, name: '', id: 0, isFetching: false, error: '' }
 
     default:

@@ -5,7 +5,7 @@ export default class Profile extends React.Component {
 
   componentDidMount(){
     const { loadData, id } = this.props
-    if(id) loadData(id);
+    loadData(id);
   }
 
   do_className = (cl) => {
